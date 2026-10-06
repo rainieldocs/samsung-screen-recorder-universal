@@ -1,0 +1,28 @@
+--- a/smali/com/sec/app/screenrecorder/util/MediaProjectionHelper.smali
++++ b/smali/com/sec/app/screenrecorder/util/MediaProjectionHelper.smali
+@@ -138,6 +138,10 @@
+     iput-object v0, p0, Lcom/sec/app/screenrecorder/util/MediaProjectionHelper;->mMediaProjection:Landroid/media/projection/MediaProjection;
+ 
+     :cond_0
++    const/4 v0, 0x0
++
++    iput-object v0, p0, Lcom/sec/app/screenrecorder/util/MediaProjectionHelper;->mMediaProjectionData:Landroid/content/Intent;
++
+     return-void
+ .end method
+ 
+--- a/smali/com/sec/app/screenrecorder/encoder/RecordingThreadService.smali
++++ b/smali/com/sec/app/screenrecorder/encoder/RecordingThreadService.smali
+@@ -2949,6 +2949,12 @@
+     .locals 2
+ 
+     .prologue
++    invoke-static {}, Lcom/sec/app/screenrecorder/util/MediaProjectionHelper;->getInstance()Lcom/sec/app/screenrecorder/util/MediaProjectionHelper;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Lcom/sec/app/screenrecorder/util/MediaProjectionHelper;->releaseMediaProjection()V
++
+     .line 348
+     iget-object v0, p0, Lcom/sec/app/screenrecorder/encoder/RecordingThreadService;->mHandler:Landroid/os/Handler;
+ 

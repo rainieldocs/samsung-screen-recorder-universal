@@ -1,0 +1,42 @@
+--- a/smali/com/sec/app/screenrecorder/util/MediaUtil.smali
++++ b/smali/com/sec/app/screenrecorder/util/MediaUtil.smali
+@@ -1732,16 +1732,6 @@
+     invoke-virtual {v0, v3, p4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+ 
+     .line 357
+-    const-string v3, "recordingtype"
+-
+-    const/4 v4, -0x1
+-
+-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+-
+-    move-result-object v4
+-
+-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+-
+     .line 358
+     const-string v3, "_size"
+ 
+@@ -1805,22 +1795,10 @@
+     invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+ 
+     .line 362
+-    const-string v3, "video_codec_info"
+-
+-    const-string v4, "H.264"
+-
+-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+-
+     .line 363
+     if-eqz p7, :cond_0
+ 
+     .line 364
+-    const-string v3, "audio_codec_info"
+-
+-    const-string v4, "AAC"
+-
+-    invoke-virtual {v0, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+-
+     .line 367
+     :cond_0
+     new-instance v2, Landroid/media/MediaMetadataRetriever;

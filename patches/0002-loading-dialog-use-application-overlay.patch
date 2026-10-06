@@ -1,0 +1,11 @@
+--- a/smali/com/sec/app/screenrecorder/encoder/RecordingThreadService.smali
++++ b/smali/com/sec/app/screenrecorder/encoder/RecordingThreadService.smali
+@@ -953,7 +953,7 @@
+     invoke-virtual {v2, v5, v5}, Landroid/view/Window;->setFlags(II)V
+ 
+     .line 982
+-    const/16 v3, 0x7d3
++    const/16 v3, 0x7f6
+ 
+     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
+ 
